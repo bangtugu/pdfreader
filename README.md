@@ -111,3 +111,19 @@ npm start
 # 기본 주소 : http://localhost:3000
 ```
 
+
+
+---
+
+#### 사용 라이브러리
+
+* Frontend
+  - React
+  
+* Backend
+  - FastAPI
+  - Uvicorn (ASGI 서버)
+  - PyMuPDF (PDF 텍스트 추출)
+  - pytesseract (OCR)
+  - python-multipart (파일 업로드 처리)
+  - Tesseract-OCR (외부 OCR 엔진, 별도 설치 필요)
