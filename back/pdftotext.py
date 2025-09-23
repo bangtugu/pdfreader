@@ -17,8 +17,12 @@ def clean_ocr_text(raw_text):
     return raw_text.strip()
 
 
+# def 불필요문자제거():
+#     pass
+
+
 # def 띄어쓰기복구?():
-#     라이브러리있는듯
+#     pass
 
 
 def pdf_to_text_with_ocr(pdf_bytes, lang='eng+kor'):
@@ -31,14 +35,17 @@ def pdf_to_text_with_ocr(pdf_bytes, lang='eng+kor'):
         blocks = page.get_text("blocks")
         image_blocks = [b for b in blocks if b[6] == 1]
 
+        # 이미지 없으면 text만 바로 추출 
         if len(image_blocks) == 0 and len(text) > 10:
             full_text.append(text)
+        # 이미지 있으면 페이지 전체 이미지로 변환 후 OCR
         else:
             pix = page.get_pixmap(dpi=500) #dpi 올라갈수록 정확도 올라감. 하지만 느려짐
             img_bytes = pix.tobytes(output="png")
             img = Image.open(io.BytesIO(img_bytes))
             ocr_text = pytesseract.image_to_string(img, lang=lang)
             full_text.append(ocr_text)
+        # 이미지 블록만 OCR하고 나머지는 그냥 위아래로 붙이는거도 괜찮을수있음
 
     doc.close()
     for i in range(len(full_text)):
