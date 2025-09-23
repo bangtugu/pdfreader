@@ -21,3 +21,42 @@ front/.env.production.local
 front/npm-debug.log*
 front/yarn-debug.log*
 front/yarn-error.log*
+
+# ===========================
+# FastAPI / Python (back 폴더)
+# ===========================
+
+# Python bytecode
+back/__pycache__/
+back/**/*.pyc
+
+# Virtual environments
+back/.env/
+back/.venv/
+back/env/
+
+# Pytest cache
+back/.pytest_cache/
+
+# Mypy cache
+back/.mypy_cache/
+
+# Jupyter notebook checkpoints
+back/.ipynb_checkpoints/
+
+# Logs
+back/*.log
+
+# VSCode settings for back folder
+back/.vscode/
+
+# Pycharm project files
+back/.idea/
+
+# Distribution / packaging
+back/build/
+back/dist/
+back/*.egg-info/
+
+# Cache files (if any)
+back/*.cache
