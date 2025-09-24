@@ -60,3 +60,4 @@ back/*.egg-info/
 
 # Cache files (if any)
 back/*.cache
+back/.pyc
