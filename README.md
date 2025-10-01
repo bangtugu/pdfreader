@@ -85,7 +85,7 @@ pip install -r requirements.txt
 # 뒤에 경로 본인 tesseract.exe 경로로 변경
 
 # 5. 실행
-uvicorn main:app --reload
+python main.py
 
 # 기본 주소 : http://localhost:8000
 ```
