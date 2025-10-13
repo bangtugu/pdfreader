@@ -1,52 +1,4 @@
-# 📄PDF to Text with OCR
-
-
-
-### 미리보기
-
-![image-20250923133332193](./assets/image-20250923133332193.png)
-
-* 간단하게 파일 선택, 업로드 및 변환 버튼만 있습니다.
-
----
-
-![image-20250923133412965](./assets/image-20250923133412965.png)
-
-* 본인 기기에서 파일을 선택합니다.
-
----
-
-![image-20250923133424663](./assets/image-20250923133424663.png)
-
-* 파일 선택 후 업로드 및 변환 버튼을 누릅니다.
-
----
-
-![image-20250923133538547](./assets/image-20250923133538547.png)
-
-* 기다리면 변환된 텍스트를 받아옵니다.
-
-
-
-
-
-
-
-### 폴더 구조
-
-```bash
-pdf-to-text-app/
- ├── back/               # FastAPI 백엔드
- │   ├── main.py
- │   ├── pdftotext.py
- │   └── requirements.txt
- ├── front/              # React 프론트엔드
- │   ├── package.json
- │   └── src/
- │       └── App.js 등
- └── README.md           # 사용설명서
- 	 assets/
-```
+# pytesseract-back
 
 
 
@@ -92,34 +44,10 @@ python main.py
 
 
 
-### 2. 프론트엔드(React)
-
-#### 설치 및 실행 순서
-
-```cmd
-cd ../front
-
-# 1. Node.js 설치 (필요시)
-# https://nodejs.org
-
-# 2. package.json 설치
-npm install
-
-# 3. 실행
-npm start
-
-# 기본 주소 : http://localhost:3000
-```
-
-
-
 ---
 
 #### 사용 라이브러리
 
-* Frontend
-  - React
-  
 * Backend
   - FastAPI
   - Uvicorn (ASGI 서버)
@@ -127,3 +55,13 @@ npm start
   - pytesseract (OCR)
   - python-multipart (파일 업로드 처리)
   - Tesseract-OCR (외부 OCR 엔진, 별도 설치 필요)
+
+
+
+### 주의사항
+
+현재는 OCRhub 프론트엔드 사용중.
+8000번 포트로 reload True 상태로 기본 실행되므로, 필요시 main.py 내부에서 변경해야함.
+
+* **OCRhub**
+  - [GitHub](https://github.com/bangtugu/OCRhub) 참조
